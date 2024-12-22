@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumerableHeadTailAndSieve", "EnumerableHeadTailAndSieve\EnumerableHeadTailAndSieve.csproj", "{D5E34C14-C0E5-4E45-B2D6-3FB75EBA85C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumerableHeadTailAndSieve.Tests", "EnumerableHeadTailAndSieve.Tests\EnumerableHeadTailAndSieve.Tests.csproj", "{7616935D-2B63-4132-BFD4-C8C75B891467}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{D5E34C14-C0E5-4E45-B2D6-3FB75EBA85C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5E34C14-C0E5-4E45-B2D6-3FB75EBA85C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5E34C14-C0E5-4E45-B2D6-3FB75EBA85C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7616935D-2B63-4132-BFD4-C8C75B891467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7616935D-2B63-4132-BFD4-C8C75B891467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7616935D-2B63-4132-BFD4-C8C75B891467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7616935D-2B63-4132-BFD4-C8C75B891467}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
