@@ -5,7 +5,14 @@ public static class SieveExtensions
     public static IEnumerable<int> Nats(this int start)
     {
         var n = start;
-        while (true) yield return checked(n++);
+        while (true)
+        {
+            yield return n;
+            checked
+            {
+                n++;
+            }
+        }
         // ReSharper disable once IteratorNeverReturns
     }
 

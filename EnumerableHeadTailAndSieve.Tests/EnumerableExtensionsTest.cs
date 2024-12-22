@@ -24,4 +24,34 @@ public class EnumerableExtensionsTest
         Assert.AreEqual(0, x.Count()); // still has not reset
     }
 
+    [TestMethod]
+    public void TestHeadTailWasteful()
+    {
+        int n = 5;
+        int gec = 0, mnc = 0, d = 0;
+        CollectionAssert.AreEqual(new[] { -n, (n + 1) * n, (n + 2) * n },
+            n.Nats()
+                .Track(() => gec++, () => mnc++, () => d++)
+                .HeadTailWasteful(k => -k, (x, yy) => yy.Select(y => y * x))
+                .Take(3).ToList());
+        Assert.AreEqual(2, gec); // it starts enumerating twice
+        Assert.AreEqual(1 + 3, mnc); // moves first once and second three times
+        Assert.AreEqual(2, d); // disposes both
+    }
+
+    [TestMethod]
+    public void TestHeadTail()
+    {
+        int n = 5;
+        int gec = 0, mnc = 0, d = 0;
+        CollectionAssert.AreEqual(new[] { -n, (n + 1) * n, (n + 2) * n },
+            n.Nats()
+                .Track(() => gec++, () => mnc++, () => d++)
+                .HeadTail(k => -k, (x, yy) => yy.Select(y => y * x))
+                .Take(3).ToList());
+        Assert.AreEqual(1, gec);
+        Assert.AreEqual(3, mnc);
+        Assert.AreEqual(1, d);
+    }
+
 }
